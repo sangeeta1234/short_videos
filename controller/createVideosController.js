@@ -95,7 +95,6 @@ createvideoController.createVideos = async (req, res) => {
             await unlink(inputVideoPath.path);
 
             console.log(`Zip file ${zipFilePath} sent successfully.`);
-            res.status(200).send(`Zip filed created and downloaded successfully.`);
         });
     } catch (err) {
         console.error('Error creating videos:', err);
