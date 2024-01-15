@@ -20,3 +20,7 @@ This is a simple Node.js project with npm and nvm.
 Replace `<repository_url>` and `<project_directory>` with your actual repository URL and project directory.
 
 Make sure to customize the sections based on your project's specific details. The README provides a basic structure that includes information about prerequisites, installation, usage, contributing, and licensing.
+
+2. RUN:
+   node app.js
+  
