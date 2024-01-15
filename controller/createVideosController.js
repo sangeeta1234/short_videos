@@ -4,19 +4,16 @@ ffmpeg.setFfmpegPath(ffmpegStatic);
 const fs = require('fs').promises;
 const path = require('path');
 const archiver = require('archiver');
+const { getVideoDuration } = require('../videoUtils');
 
 let createvideoController = {};
 
 createvideoController.createVideos = async (req, res) => {
     const inputVideoPath = req.file;
-    console.log(inputVideoPath);
-    console.log(inputVideoPath.originalname);
-
+    const totalDuration = await getVideoDuration(inputVideoPath.path);
     const fileExtension = path.extname(inputVideoPath.originalname);
-
     const outputDir = './uploads';
     const numberOfVideos = req.body.numberOfVideos || 2;
-    const totalDuration = 176;
     const durationPerVideo = totalDuration / numberOfVideos;
 
     const unlink = async (filePath) => {
